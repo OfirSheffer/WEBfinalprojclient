@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Track Orders - Sweet Crust Bakery</title>
+    <link rel="stylesheet" href="css/trackOrder.css">
+    <link rel="stylesheet" href="css/navDropdown.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <figure>
+        <img src="images/logo.png" alt="Bakery Logo">
+        <figcaption>Sweet Crust Bakery</figcaption>
+    </figure>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="homepage.html">Home</a></li>
+            <li class="dropdown">
+                <button id="dropdown-btn" class="dropdown-toggle">Track orders ▾</button>
+                <ul class="dropdown-content" id="dropdown-menu">
+                    <li><a href="buyer-dashboard.html">Dashboard</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="buyerHistory.html">Order History</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="track-orders-section">
+        <h2>Track Your Orders</h2>
+
+        <table id="orders-table">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Date & Time</th>
+                    <th>Items Purchased</th>
+                    <th>Status</th>
+                    <th>Chat</th>
+                </tr>
+            </thead>
+            <tbody id="orders-body">
+                <!-- Orders will load here dynamically -->
+            </tbody>
+        </table>
+
+        <section class="chat-section">
+            <h3>Chat with the Manager</h3>
+            <section id="chat-box">
+                <!-- Chat messages will appear here -->
+            </section>
+            <section class="chat-input-section">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button id="send-chat">Send</button>
+            </section>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <section class="footer-columns">
+        <section class="footer-section">
+            <h4>Who We Are</h4>
+            <nav>
+                <a href="about.html">About</a>
+            </nav>
+            <section class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+            </section>
+        </section>
+        <section class="footer-section">
+            <h4>Follow Us</h4>
+            <nav>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            </nav>
+        </section>
+        <section class="footer-section weather-info">
+            <h4>Weather & Time</h4>
+            <p id="israel-clock">Loading time...</p>
+            <p id="weather-info">Loading weather...</p>
+          </section>
+    </section>
+    <p>© 2025 Sweet Crust Bakery. All rights reserved.</p>
+</footer>
+
+<script src="js/trackOrders.js"></script>
+<script src="js/navDropdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

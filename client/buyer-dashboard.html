@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard - Sweet Crust Bakery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/buyer-Dashboard.css">
+</head>
+<body>
+
+<header>
+    <figure>
+        <img src="images/logo.png" alt="Bakery Logo">
+        <figcaption>Sweet Crust Bakery</figcaption>
+    </figure>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="cards">
+        <article class="card" onclick="location.href='reservation.html'">
+            <figure class="img-container">
+                <img src="images/wallpaper.png" alt="Make a Reservation">
+            </figure>
+            <section class="card-content">
+                <h3>Make a Reservation</h3>
+                <p>Book your favorite pastries in advance easily.</p>
+            </section>
+        </article>
+
+        <article class="card" onclick="location.href='track-orders.html'">
+            <figure class="img-container">
+                <img src="images/buyerstatuss.png" alt="Track Order Status">
+            </figure>
+            <section class="card-content">
+                <h3>Track Order Status</h3>
+                <p>Check the status of your current orders.</p>
+            </section>
+        </article>
+
+        <article class="card" onclick="location.href='buyerHistory.html'">
+            <figure class="img-container">
+                <img src="images/buyerhistory.png" alt="Order History">
+            </figure>
+            <section class="card-content">
+                <h3>Order History</h3>
+                <p>View your past orders.</p>
+            </section>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <section class="footer-columns">
+        <section class="footer-section">
+            <h4>Who We Are</h4>
+            <nav>
+                <a href="about.html">About</a>
+            </nav>
+            <section class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+            </section>
+        </section>
+        <section class="footer-section">
+            <h4>Follow Us</h4>
+            <nav>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            </nav>
+        </section>
+        <section class="footer-section weather-info">
+            <h4>Weather & Time</h4>
+            <p id="israel-clock">Loading time...</p>
+            <p id="weather-info">Loading weather...</p>
+          </section>
+    </section>
+    <p>© 2025 Sweet Crust Bakery. All rights reserved.</p>
+</footer>
+<script src="js/dashboard-protect.js"></script>
+</body>
+</html>

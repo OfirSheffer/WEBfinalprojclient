@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Sweet Crust Bakery</title>
+  <link rel="stylesheet" href="css/api.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <figure>
+        <img src="images/logo.png" alt="Bakery Logo">
+        <figcaption>Sweet Crust Bakery</figcaption>
+    </figure>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="hero">
+      <h2>Try a Delicious Recipe!</h2>
+      <button id="btn-recipe" class="auth-button">Get Recipe</button>
+      <article id="recipe-card">
+        <!-- מתכון יופיע כאן -->
+      </article>
+    </section>
+  </main>
+  <footer>
+    <section class="footer-columns">
+      <section class="footer-section">
+        <h4>Who We Are</h4>
+        <nav><a href="about.html">About</a></nav>
+        <section class="social-icons">
+          <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+        </section>
+      </section>
+      <section class="footer-section">
+        <h4>Follow Us</h4>
+        <nav>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </nav>
+      </section>
+      <section class="footer-section weather-info">
+        <h4>Weather & Time</h4>
+        <p id="israel-clock">Loading time...</p>
+        <p id="weather-info">Loading weather...</p>
+      </section>
+    </section>
+    <p>© 2025 Sweet Crust Bakery. All rights reserved.</p>
+  </footer>
+  <script src="js/api.js"></script>
+</body>
+</html>
+
+
