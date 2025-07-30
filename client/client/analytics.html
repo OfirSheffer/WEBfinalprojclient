@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics - Sweet Crust Bakery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/analytics.css">
+  <link rel="stylesheet" href="css/navDropdown.css">
+</head>
+<body>
+
+<header>
+    <figure>
+        <img src="images/logo.png" alt="Bakery Logo">
+        <figcaption>Sweet Crust Bakery</figcaption>
+    </figure>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <button id="dropdown-btn" class="dropdown-toggle">View Analytics ▾</button>
+                <ul class="dropdown-content" id="dropdown-menu">
+                    <li><a href="manager-dashboard.html">Dashboard</a></li>
+                    <li><a href="manage-inventory.html">Manage Inventory</a></li>
+                    <li><a href="manage-orders.html">Managae Orders</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+  <section class="analytics-section">
+    <h2>Analytics Dashboard</h2>
+
+    <section class="summary-cards">
+      <article class="summary-card">
+        <h3>Total Sales (Weekly)</h3>
+        <p id="total-sales">₪0</p>
+      </article>
+      <article class="summary-card">
+        <h3>Orders This Week</h3>
+        <p id="total-orders">0</p>
+      </article>
+      <article class="summary-card">
+        <h3>Average Cart Value</h3>
+        <p id="average-cart">₪0</p>
+      </article>
+    </section>
+
+    <section class="charts-container">
+      <section class="chart-box">
+        <h3>Sales by Category</h3>
+        <canvas id="categoryPieChart"></canvas>
+      </section>
+
+      <section class="chart-box">
+        <h3>Daily Sales (This Week)</h3>
+        <canvas id="dailyBarChart"></canvas>
+      </section>
+
+      <section class="chart-box">
+        <h3>Revenue by Day</h3>
+        <canvas id="revenueByDayChart"></canvas>
+      </section>
+    </section>
+
+    <div class="button-group">
+      <button id="refresh-data">Refresh Data</button>
+      <button id="export-excel">Export to Excel</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <section class="footer-columns">
+    <section class="footer-section">
+      <h4>Who We Are</h4>
+      <nav><a href="about.html">About</a></nav>
+      <section class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+      </section>
+    </section>
+    <section class="footer-section">
+      <h4>Follow Us</h4>
+      <nav>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </nav>
+    </section>
+    <section class="footer-section weather-info">
+      <h4>Weather & Time</h4>
+      <p id="israel-clock">Loading time...</p>
+      <p id="weather-info">Loading weather...</p>
+    </section>
+  </section>
+  <p>© 2025 Sweet Crust Bakery. All rights reserved.</p>
+</footer>
+
+<script src="js/analytics.js"></script>
+<script src="js/navDropdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>

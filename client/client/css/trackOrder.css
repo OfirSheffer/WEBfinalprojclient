@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background: url('../images/wallpaper2.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+figure {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #612999;
+    margin: 0;
+}
+
+figure img {
+    width: 50px;
+    height: 50px;
+}
+
+figcaption {
+    font-size: 20px;
+    font-weight: 700;
+    color: #612999;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.track-orders-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.track-orders-section h2 {
+    color: #612999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+#orders-table th, #orders-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#orders-table th {
+    background-color: #EFECFF;
+    color: #612999;
+}
+
+#orders-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#orders-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.chat-section {
+    margin-top: 20px;
+}
+
+.chat-section h3 {
+    color: #612999;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#chat-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.chat-input-section {
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#send-chat {
+    background-color: #612999;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#send-chat:hover {
+    background-color: #7e3ff2;
+}
+
+footer {
+    background-color: #CEC1D8;
+    width: 100%;
+    padding: 60px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+  }
+  
+  .footer-columns {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-section h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: white;
+  }
+  
+  .footer-section a {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .footer-section .social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .footer-section .social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  footer p {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+  }
+  .weather-info {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .weather-info p {
+    margin: 4px 0;
+    color: white;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-wrap: nowrap; 
+      flex-direction: row; 
+      padding: 10px 20px;
+    }
+  
+    figure img {
+      width: 28px;
+      height: 28px;
+    }
+  
+    figcaption {
+      font-size: 14px;
+    }
+  
+    .nav-list {
+      gap: 6px;
+      flex-wrap: nowrap; 
+    }
+  
+    .nav-list li a,
+    .nav-list li .dropdown-toggle {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+    .footer-columns {
+        gap: 40px;
+      }
+    
+      .footer-section h4 {
+        font-size: 16px;
+      }
+    
+      .footer-section a {
+        font-size: 14px;
+      }
+    
+      .footer-section .social-icons img {
+        width: 24px;
+        height: 24px;
+      }
+    
+      footer p {
+        font-size: 12px;
+      }
+    }
