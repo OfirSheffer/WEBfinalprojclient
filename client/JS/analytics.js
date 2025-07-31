@@ -1,3 +1,4 @@
+
 let pieChartInstance = null;
 let barChartInstance = null;
 let revenueChartInstance = null;
@@ -17,8 +18,7 @@ async function loadAnalytics() {
     const revenueSummary = await summaryRes.json();
 
     buildPieChart(orders);
-    buildBarChart(orders);
-    buildRevenueByDayChart(revenueSummary);
+    buildCombinedChart(revenueSummary); 
     calculateSummary(orders);
   } catch (err) {
     console.error("❌ Failed to load analytics:", err);
@@ -57,65 +57,55 @@ function buildPieChart(orders) {
   });
 }
 
-function buildBarChart(orders) {
-  const dailyTotals = {};
-
-  orders.forEach(order => {
-    const day = new Date(order.createdAt).toLocaleDateString('en-GB');
-    let sum = 0;
-    order.items.forEach(item => {
-      sum += item.price * item.quantity;
-    });
-    if (!dailyTotals[day]) dailyTotals[day] = 0;
-    dailyTotals[day] += sum;
-  });
+function buildCombinedChart(summaryData) {
+  const labels = summaryData.map(entry => entry._id);
+  const revenueData = summaryData.map(entry => entry.totalRevenue);
+  const orderCountData = summaryData.map(entry => entry.totalOrders);
 
   const ctx = document.getElementById('dailyBarChart').getContext('2d');
   if (barChartInstance) barChartInstance.destroy();
 
   barChartInstance = new Chart(ctx, {
-    type: 'bar',
     data: {
-      labels: Object.keys(dailyTotals),
-      datasets: [{
-        label: '₪ Revenue',
-        data: Object.values(dailyTotals),
-        backgroundColor: '#007bff'
-      }]
+      labels: labels,
+      datasets: [
+        {
+          type: 'bar',
+          label: '₪ Revenue',
+          data: revenueData,
+          backgroundColor: '#007bff',
+          yAxisID: 'y',
+        },
+        {
+          type: 'line',
+          label: 'Orders Count',
+          data: orderCountData,
+          borderColor: '#e74c3c',
+          backgroundColor: 'rgba(231, 76, 60, 0.2)',
+          fill: true,
+          tension: 0.3,
+          yAxisID: 'y1',
+        }
+      ]
     },
     options: {
       responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
       scales: {
-        y: { beginAtZero: true }
-      }
-    }
-  });
-}
-
-function buildRevenueByDayChart(data) {
-  const labels = data.map(entry => entry._id);
-  const revenue = data.map(entry => entry.totalRevenue);
-
-  const ctx = document.getElementById('revenueByDayChart').getContext('2d');
-  if (revenueChartInstance) revenueChartInstance.destroy();
-
-  revenueChartInstance = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        label: '₪ Revenue by Day',
-        data: revenue,
-        borderColor: '#8e44ad',
-        backgroundColor: 'rgba(142, 68, 173, 0.2)',
-        fill: true,
-        tension: 0.3
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: { beginAtZero: true }
+        y: {
+          beginAtZero: true,
+          position: 'left',
+          title: { display: true, text: '₪ Revenue' }
+        },
+        y1: {
+          beginAtZero: true,
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          title: { display: true, text: 'Order Count' }
+        }
       }
     }
   });
@@ -164,7 +154,7 @@ async function exportToExcel() {
     console.error("❌ Failed to export to Excel:", error);
   }
 }
-// Show live clock in Israel timezone
+
 function loadClock() {
   const clockElement = document.getElementById("israel-clock");
 
@@ -183,7 +173,6 @@ function loadClock() {
   setInterval(updateClock, 1000);
 }
 
-// Load weather for Tel Aviv using Open-Meteo API
 async function loadWeatherTelAviv() {
   const weatherElement = document.getElementById("weather-info");
 
