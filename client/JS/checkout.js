@@ -155,7 +155,7 @@ async function handlePayment() {
   };
 
   try {
-    const res = await fetch('/api/orders', {
+    const res = await fetch('https://webfinalprojserver-production.up.railway.app/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
