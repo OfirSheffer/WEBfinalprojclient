@@ -18,7 +18,7 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
     }
   
     try {
-      const response = await fetch('/api/auth/signup', {
+      const response = await fetch('https://webfinalprojserver-production.up.railway.app/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

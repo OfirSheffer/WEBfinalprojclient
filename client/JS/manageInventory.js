@@ -37,7 +37,7 @@ function showPopup(title, text, icon = 'info') {
 
 async function fetchExistingProducts() {
     try {
-        const response = await fetch('/api/products');
+        const response = await fetch('https://webfinalprojserver-production.up.railway.app/api/products');
         const products = await response.json();
         existingProducts = products;
     } catch (error) {
@@ -51,7 +51,7 @@ async function loadInventory() {
     inventoryBody.innerHTML = 'Loading...';
 
     try {
-        const response = await fetch('/api/products');
+        const response = await fetch('https://webfinalprojserver-production.up.railway.app/api/products');
         const products = await response.json();
         inventoryBody.innerHTML = '';
 
@@ -168,7 +168,7 @@ async function addNewProduct() {
     let imageUrl = productImages[name] || 'images/default.jpg';
 
     try {
-        const response = await fetch('/api/products', {
+        const response = await fetch('https://webfinalprojserver-production.up.railway.app/api/products', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, description, price, quantity, imageUrl })
@@ -195,7 +195,7 @@ async function addNewProduct() {
 
 async function updateProduct(id, updates) {
     try {
-        const response = await fetch(`/api/products/${id}`, {
+        const response = await fetch(`https://webfinalprojserver-production.up.railway.app/api/products/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updates)
@@ -212,7 +212,7 @@ async function updateProduct(id, updates) {
 
 async function deleteProduct(id) {
     try {
-        const response = await fetch(`api/products/${id}`, {
+        const response = await fetch(`https://webfinalprojserver-production.up.railway.app/api/products/${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) {

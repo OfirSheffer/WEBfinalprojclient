@@ -84,7 +84,7 @@ function renderCart() {
 
 async function loadProducts() {
   try {
-    const res = await fetch('/api/products');
+    const res = await fetch('https://webfinalprojserver-production.up.railway.app/api/products');
     const products = await res.json();
 
     const productImages = {

@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadAnalytics() {
   try {
-    const ordersRes = await fetch('/api/orders');
+    const ordersRes = await fetch('https://webfinalprojserver-production.up.railway.app/api/orders');
     const orders = await ordersRes.json();
 
-    const summaryRes = await fetch('/api/orders/summary-by-day');
+    const summaryRes = await fetch('https://webfinalprojserver-production.up.railway.app/api/orders/summary-by-day');
     const revenueSummary = await summaryRes.json();
 
     buildPieChart(orders);
@@ -142,7 +142,7 @@ function calculateSummary(orders) {
 
 async function exportToExcel() {
   try {
-    const res = await fetch('/api/orders/summary-by-day');
+    const res = await fetch('https://webfinalprojserver-production.up.railway.app/api/orders/summary-by-day');
     const data = await res.json();
 
     const sheetData = [

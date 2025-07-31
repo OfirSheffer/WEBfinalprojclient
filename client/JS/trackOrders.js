@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     try {
-      const response = await fetch(`/api/orders/user/${userId}`);
+      const response = await fetch(`https://webfinalprojserver-production.up.railway.app/api/orders/user/${userId}`);
       const orders = await response.json();
       ordersBody.innerHTML = '';
   
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('chat-input').value = '';
   
     try {
-      const response = await fetch(`/api/messages/${orderId}`);
+      const response = await fetch(`https://webfinalprojserver-production.up.railway.app/api/messages/${orderId}`);
       const messages = await response.json();
       chatBox.innerHTML = '';
   
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!message || !currentOrderId) return;
   
     try {
-      await fetch(`/api/messages`, {
+      await fetch(`https://webfinalprojserver-production.up.railway.app/api/messages`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

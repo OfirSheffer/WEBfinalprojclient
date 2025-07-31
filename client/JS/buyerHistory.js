@@ -29,7 +29,7 @@ async function loadOrderHistory() {
     }
 
     try {
-        const response = await fetch(`/api/orders/user/${userId}`);
+        const response = await fetch(`https://webfinalprojserver-production.up.railway.app/api/orders/user/${userId}`);
         if (!response.ok) throw new Error('Failed to fetch orders.');
 
         const orders = await response.json();
@@ -116,7 +116,7 @@ function openReorderPopup(order) {
 
 async function fetchProducts() {
     try {
-        const response = await fetch('/api/products');
+        const response = await fetch('https://webfinalprojserver-production.up.railway.app/api/products');
         return await response.json();
     } catch (error) {
         console.error("Error fetching products:", error);

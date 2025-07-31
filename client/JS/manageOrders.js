@@ -5,7 +5,7 @@ async function loadOrders() {
   body.innerHTML = '<tr><td colspan="10">Loading...</td></tr>';
 
   try {
-    const res = await fetch('/api/orders');
+    const res = await fetch('https://webfinalprojserver-production.up.railway.app/api/orders');
     const orders = await res.json();
     body.innerHTML = '';
 
@@ -55,14 +55,14 @@ async function loadOrders() {
 }
 
 async function fetchLastMessage(orderId) {
-  const res = await fetch(`/api/messages/${orderId}`);
+  const res = await fetch(`https://webfinalprojserver-production.up.railway.app/api/messages/${orderId}`);
   const msgs = await res.json();
   return msgs.length ? msgs[msgs.length - 1].content : '';
 }
 
 async function updateStatus(orderId, newStatus) {
   try {
-    await fetch(`/api/orders/${orderId}`, {
+    await fetch(`https://webfinalprojserver-production.up.railway.app/api/orders/${orderId}`, {
       method: 'PATCH',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({status: newStatus})
@@ -98,7 +98,7 @@ async function deleteOrder(orderId) {
   if (!confirm.isConfirmed) return;
 
   try {
-    const res = await fetch(`http://localhost:5050/api/orders/${orderId}`, {
+    const res = await fetch(`https://webfinalprojserver-production.up.railway.app/api/orders/${orderId}`, {
       method: 'DELETE'
     });
 
@@ -181,7 +181,7 @@ async function handleChat(order) {
 
       newTotal = updatedItems.reduce((s, i) => s + i.price * i.quantity, 0);
 
-      await fetch(`http://localhost:5050/api/orders/${order._id}`, {
+      await fetch(`https://webfinalprojserver-production.up.railway.app/api/orders/${order._id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: updatedItems })
@@ -189,7 +189,7 @@ async function handleChat(order) {
     }
   }
 
-  await fetch(`http://localhost:5050/api/messages`, {
+  await fetch(`https://webfinalprojserver-production.up.railway.app/api/messages`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ orderId: order._id, sender: 'manager', content: message })

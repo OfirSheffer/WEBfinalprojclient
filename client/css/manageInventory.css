@@ -41,37 +41,12 @@ figcaption {
     color: #612999;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    text-decoration: none;
-    background-color: #EFECFF;
-    color: #612999;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #612999;
-    color: white;
-}
-
 .cart-icon {
     width: 24px;
     height: 24px;
     vertical-align: middle;
 }
 
-/* ===== MAIN CONTENT ===== */
 main {
     flex-grow: 1;
     display: flex;

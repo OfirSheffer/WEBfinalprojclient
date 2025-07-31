@@ -18,6 +18,9 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex-wrap: nowrap;
     overflow-x: auto;
+    position: relative;
+    z-index: 999 !important;
+    overflow: visible !important;
   }
   
   figure {
@@ -39,39 +42,6 @@ body {
     font-size: 18px;
     font-weight: 700;
     color: #612999;
-  }
-  
-  .nav-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: nowrap;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    background-color: #EFECFF;
-    color: #612999;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 13px;
-    transition: background-color 0.3s, color 0.3s;
-    white-space: nowrap;
-  }
-  
-  nav ul li a:hover {
-    background-color: #612999;
-    color: white;
   }
   
   #logout-button {
@@ -403,3 +373,26 @@ body {
       font-size: 12px;
     }
   }
+ 
+
+ /* =========================== */
+/* Dropdown fix for wallpaper */
+/* =========================== */
+.dropdown-content {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  background-color: #EFECFF !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.dropdown.open .dropdown-content {
+  display: block !important;
+}
+
+nav, .nav-list {
+  overflow: visible !important;
+}
