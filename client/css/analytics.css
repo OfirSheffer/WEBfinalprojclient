@@ -113,22 +113,7 @@ main {
     margin-bottom: 15px;
 }
 
-#refresh-data {
-    margin: 20px auto 0 auto;
-    display: block;
-    padding: 10px 20px;
-    background-color: #612999;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-#refresh-data:hover {
-    background-color: #7e3ff2;
-}
 
 .button-group {
     display: flex;
@@ -151,6 +136,7 @@ main {
 .button-group button:hover {
     background-color: #7e3ff2;
 }
+
 
 footer {
     background-color: #CEC1D8;
